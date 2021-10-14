@@ -50,6 +50,10 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
   function addNewCard() {
     showAddCardModal(true);
   }
+  
+  function checkAnswer(){
+
+  }
 
   return <Col>
     <h1>Control Panel</h1>
@@ -59,7 +63,7 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
     <Button onClick={shuffleUsers} className="m-4">Shuffle Users</Button>
     <Button onClick={save} className="m-4" variant="success">Save</Button>
     <Button onClick={addNewCard} className="m-4">Add new card</Button>
-    <Button> Correct</Button>
+    <Button className="m-6"> Correct</Button>
 
   </Col>
 }
