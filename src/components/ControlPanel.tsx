@@ -25,11 +25,12 @@ export function getLocalStorageUsers(): User[] {
   }
 }
 
-export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCardModal,addWrongCard}:
+export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCardModal,addWrongCard,wrongDeck}:
   {
     setCard: (c: Card) => void, reveal: (r: boolean) => void, answerRevealed: boolean,
     showAddCardModal: (b: boolean) => void, deck: Card[],
-    addWrongCard: ()=> void
+    addWrongCard: ()=> void,
+    wrongDeck: Card[],
 
   }): JSX.Element {
   const [users, setUsers] = useState<User[]>(getLocalStorageUsers());
@@ -57,6 +58,12 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
     setRandomCard();
 
   }
+  function setReviewDeck(){
+    reveal(false);
+    setCard(getRandomElement(wrongDeck));
+    
+
+  }
   
   return <Col>
     <h1>Control Panel</h1>
@@ -66,7 +73,7 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
     <Button onClick={addAndSwap} className="m-4">Wrong</Button>
     <Button onClick={shuffleUsers} className="m-4">Shuffle Users</Button>
     <Button onClick={addNewCard} className="m-4">Add new card</Button>
-    <Button onClick={addWrongCard} className="m-4">Show Wrong Cards</Button>
+    <Button onClick={setReviewDeck} className="m-4">Show Wrong Cards</Button>
     <Button onClick={save} className="m-4" variant="success">Save</Button>
 
   </Col>
