@@ -13,9 +13,14 @@ function App(): JSX.Element {
   const [answerRevealed, reveal] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(false);
   const [deck, setDeck] = useState<Card[]>(CARDS);
+  const [wrongDeck, setWrongDeck] = useState<Card[]>(CARDS);
 
   function addCard(newCard: Card) {
     setDeck([...deck, newCard]);
+  }
+
+  function addWrongCard(){
+    setWrongDeck([...wrongDeck,activeCard]);
   }
 
   return (
@@ -26,7 +31,8 @@ function App(): JSX.Element {
           setCard={setActiveCard}
           reveal={reveal}
           deck={deck}
-          answerRevealed={answerRevealed}></ControlPanel>
+          answerRevealed={answerRevealed} 
+          addWrongCard = {addWrongCard}></ControlPanel>
         <CardViewer card={activeCard} answerRevealed={answerRevealed}></CardViewer>
         <AddCardModal visible={visible} setVisible={setVisible}
           addCard={addCard}></AddCardModal>
