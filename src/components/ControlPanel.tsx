@@ -52,6 +52,13 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
   }
   
   function checkAnswer(){
+    
+
+    
+
+
+  }
+  function reviewDeck(){
 
   }
 
@@ -63,7 +70,9 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
     <Button onClick={shuffleUsers} className="m-4">Shuffle Users</Button>
     <Button onClick={save} className="m-4" variant="success">Save</Button>
     <Button onClick={addNewCard} className="m-4">Add new card</Button>
-    <Button className="m-6"> Correct</Button>
+    <Button onClick={setRandomCard} className="m-6"> Correct</Button>
+    <Button onClick={checkAnswer} className="m-4">Wrong</Button>
+    <Button onClick={reviewDeck} className="m-4">Show Wrong Cards</Button>
 
   </Col>
 }
