@@ -72,7 +72,7 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
 
   function clearReviewDeck(){
     wrongDeck.splice(0,wrongDeck.length)
-
+    setRandomCard()
   }
 
 
