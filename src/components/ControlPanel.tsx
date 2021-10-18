@@ -71,7 +71,8 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
   }
 
   function clearReviewDeck(){
-    wrongDeck.length = 0
+    wrongDeck.splice(0,wrongDeck.length)
+
   }
 
 
