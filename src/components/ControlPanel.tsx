@@ -5,6 +5,7 @@ import { getRandomElement, shuffle } from '../utilities/data';
 import { UserList } from './UserList';
 import { useState } from 'react';
 import { Task as User } from 'editable-dnd-list';
+import internal from 'stream';
 
 export const LOCAL_STORAGE_USERS = 'ta-trainer-users';
 
@@ -25,12 +26,13 @@ export function getLocalStorageUsers(): User[] {
   }
 }
 
-export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCardModal,addWrongCard,wrongDeck}:
+export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCardModal,addWrongCard,wrongDeck,activeCard}:
   {
     setCard: (c: Card) => void, reveal: (r: boolean) => void, answerRevealed: boolean,
     showAddCardModal: (b: boolean) => void, deck: Card[],
     addWrongCard: ()=> void,
     wrongDeck: Card[],
+    activeCard: Card,
 
   }): JSX.Element {
   const [users, setUsers] = useState<User[]>(getLocalStorageUsers());
@@ -39,6 +41,7 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
   function setRandomCard() {
     reveal(false);
     setCard(getRandomElement(deck))
+
   }
 
   function shuffleUsers() {
@@ -70,6 +73,7 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
   function clearReviewDeck(){
     wrongDeck.length = 0
   }
+
 
   
   return <Col>

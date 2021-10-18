@@ -34,7 +34,8 @@ function App(): JSX.Element {
           deck={deck}
           answerRevealed={answerRevealed} 
           addWrongCard = {addWrongCard}
-          wrongDeck =  {wrongDeck}></ControlPanel>
+          wrongDeck =  {wrongDeck}
+          activeCard = {activeCard}></ControlPanel>
         <CardViewer card={activeCard} answerRevealed={answerRevealed}></CardViewer>
         <AddCardModal visible={visible} setVisible={setVisible}
           addCard={addCard}></AddCardModal>
