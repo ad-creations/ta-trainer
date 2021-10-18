@@ -60,7 +60,11 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
   }
   function setReviewDeck(){
     reveal(false);
-    setCard(getRandomElement(wrongDeck));
+    if(wrongDeck.length > 0 )
+      setCard(getRandomElement(wrongDeck));
+    else{
+      setRandomCard()
+    }
   }
 
   function clearReviewDeck(){
