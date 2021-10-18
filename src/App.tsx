@@ -20,8 +20,9 @@ function App(): JSX.Element {
   }
 
   function addWrongCard(){
-    setWrongDeck([...wrongDeck,activeCard]);
+    setWrongDeck([...wrongDeck,activeCard]);            
   }
+  
 
   return (
     <Container className="App">

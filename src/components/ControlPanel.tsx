@@ -61,9 +61,12 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
   function setReviewDeck(){
     reveal(false);
     setCard(getRandomElement(wrongDeck));
-    
-
   }
+
+  function clearReviewDeck(){
+    wrongDeck.length = 0
+  }
+
   
   return <Col>
     <h1>Control Panel</h1>
@@ -73,7 +76,8 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
     <Button onClick={addAndSwap} className="m-4">Wrong</Button>
     <Button onClick={shuffleUsers} className="m-4">Shuffle Users</Button>
     <Button onClick={addNewCard} className="m-4">Add new card</Button>
-    <Button onClick={setReviewDeck} className="m-4">Show Wrong Cards</Button>
+    <Button onClick={setReviewDeck} className="m-4">Show Review Cards</Button>
+    <Button onClick={clearReviewDeck} className="m-4">Clear Review Deck</Button>
     <Button onClick={save} className="m-4" variant="success">Save</Button>
 
   </Col>
