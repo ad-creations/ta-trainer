@@ -37,6 +37,7 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
 
   }): JSX.Element {
   const [users, setUsers] = useState<User[]>(getLocalStorageUsers());
+  
 
 
   function setRandomCard() {
