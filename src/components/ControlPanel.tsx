@@ -52,6 +52,7 @@ export function ControlPanel({ setCard, reveal, answerRevealed, deck, showAddCar
 
   function save() {
     localStorage.setItem(LOCAL_STORAGE_USERS, JSON.stringify(users));
+    localStorage.setItem(LOCAL_STORAGE_USERS, JSON.stringify(wrongDeck))
   }
 
   function addNewCard() {
